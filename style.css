@@ -1,0 +1,140 @@
+/* Reset sencillo */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,Helvetica;
+	background:linear-gradient(180deg,#0f1724,#071022);
+	color:var(--text, #e6eef6);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	line-height:1.45;
+}
+
+/* Variables */
+:root{
+	--bg:#0f1724;
+	--card:#0b1220;
+	--accent:#06b6d4;
+	--accent-2:#7c3aed;
+	--text:#e6eef6;
+	--muted:#9fb6c5;
+	--glass: rgba(255,255,255,0.03);
+	--glass-2: rgba(255,255,255,0.02);
+}
+
+/* Contenedor principal */
+.container{
+	max-width:900px;
+	margin:32px auto;
+	padding:24px;
+}
+
+/* Header */
+header{display:flex;gap:16px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.avatar{
+	width:96px;height:96px;border-radius:12px;
+	background:linear-gradient(135deg,var(--accent),var(--accent-2));
+	display:flex;align-items:center;justify-content:center;
+	font-weight:700;font-size:28px;color:#02111a;
+	flex:0 0 auto;
+}
+h1{margin:0;font-size:1.6rem}
+p.lead{margin:6px 0 0;color:var(--muted)}
+
+/* Cards y layout */
+.card{
+	background:var(--glass);
+	border-radius:12px;
+	padding:16px;
+	margin-top:14px;
+	box-shadow:0 4px 18px rgba(2,6,23,0.6);
+}
+.grid{display:grid;grid-template-columns:1fr 300px;gap:16px}
+@media (max-width:780px){
+	.grid{grid-template-columns:1fr}
+	.avatar{width:72px;height:72px;font-size:20px}
+}
+
+/* Secciones */
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skill{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-size:0.9rem}
+.footer{margin-top:18px;color:#8ea9b7;font-size:0.9rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Navegación y acciones */
+nav{
+	display:flex;
+	gap:12px;
+	flex-wrap:wrap;
+	margin:10px 0;
+	padding:10px;
+	border-radius:10px;
+	background:var(--glass-2);
+}
+nav a{
+	color:var(--text);
+	padding:8px 12px;
+	border-radius:8px;
+	background:transparent;
+	transition:background .16s;
+}
+nav a:hover{background:rgba(255,255,255,0.03)}
+
+/* Botones y acciones */
+.actions{margin-top:8px}
+.btn{
+	display:inline-block;
+	padding:8px 12px;
+	border-radius:8px;
+	background:var(--accent);
+	color:#02111a;
+	text-decoration:none;
+	font-weight:600;
+	border:none;
+	cursor:pointer;
+	transition:transform .08s ease,box-shadow .08s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn.secondary{
+	background:transparent;
+	color:var(--text);
+	border:1px solid rgba(255,255,255,0.04);
+}
+
+/* Proyectos */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+.project-card{background:var(--glass-2);padding:12px;border-radius:10px}
+.project-card h4{margin:0 0 8px 0}
+
+/* Formulario */
+form.contact-form{display:flex;flex-direction:column;gap:8px}
+form input, form textarea{
+	width:100%;
+	padding:8px;border-radius:8px;
+	border:1px solid rgba(255,255,255,0.04);
+	background:transparent;color:var(--text);
+	resize:vertical;
+}
+form input:focus, form textarea:focus{
+	outline:none;
+	box-shadow:0 0 0 3px rgba(6,182,212,0.09);
+	border-color:rgba(6,182,212,0.7);
+}
+
+/* Footer */
+footer{margin-top:18px;color:#8ea9b7;font-size:0.9rem;text-align:center}
+
+/* Utilidades */
+.hidden{display:none}
+.small{font-size:0.9rem;color:var(--muted)}
+
+/* Mejor contraste en pantallas pequeñas */
+@media (max-width:480px){
+	.container{padding:16px;margin:18px auto}
+	nav{padding:8px}
+	.card{padding:12px}
+}
